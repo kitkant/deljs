@@ -8,3 +8,38 @@ close.addEventListener("click", toggleModal);
 function toggleModal() {
   modal.classList.toggle("is-open");
 }
+
+const buttonAuth = document.querySelector('.button-auth'),
+    modalAuth = document.querySelector('.modal-auth'),
+    closeAuth = document.querySelector('.close-auth'),
+    logInForm = document.querySelector('#logInForm')
+let login = ''
+
+function toogleModalAuth() {
+  modalAuth.classList.toggle('is-open')
+}
+
+//слушатель события
+
+
+function authorized() {
+  console.log('Авторизован')
+
+}
+
+function notAuthorized() {
+  console.log('Не авторизован')
+  function logIn(event) {
+  event.preventDefault()
+  }
+
+  buttonAuth.addEventListener('click',  toogleModalAuth)
+  closeAuth.addEventListener('click', toogleModalAuth)
+  logInForm.addEventListener('submit', logIn)
+}
+
+if(login){
+  authorized()
+} else {
+  notAuthorized()
+}
